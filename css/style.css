@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: LeagueSpartan;
+    src: url(../fonts/League\ Spartan/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s ease;
+    font-family: 'LeagueSpartan';
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+#root {
+    width: 90%;
+    max-width: 400px;
+    min-width: 220px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+#root > div {
+    border-radius: 10px;
+}
+
+#root #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header #title {
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.1s ease;
+}
+
+#theme {
+    display: flex;
+    align-items: end;
+}
+
+#theme > p {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 3px;
+    margin-right: 20px;
+}
+
+#themeOptions {
+    display: flex;
+    font-size: 13px;
+    font-weight: bold;
+    gap: 10px;
+    margin-bottom: 5px;;
+}
+
+#themeBox #themeButton {
+    width: 60px;
+    height: 23px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: 0.1s ease;
+}
+
+#themeButton #circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 9%;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.2s;
+    /*9% 39% 69%*/
+}
+
+#circleHover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    position: absolute;
+}
+
+#circleHover div {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#themeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#screen {
+    width: 100%;
+    height: 95px;
+    transition: 0.1s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+#screen #screenContent {
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+    font-size: 30px;
+    background: 0;
+    outline: 0;
+    border: 0;
+    caret-color: transparent;
+}
+
+#topScreen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#buttonBox {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    transition: 0.1s ease;
+}
+
+#buttonBox div:nth-child(1) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#buttonBox div:nth-child(1) div {
+    height: 40px;
+    display: flex;
+    flex-shrink: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+#buttonBox div:nth-child(2) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#buttonBox div:nth-child(2) div {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+@media (max-width: 390px) {
+
+    #buttonBox {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    #buttonBox div:nth-child(1) {
+        gap: 10px;
+    }
+
+    #buttonBox div:nth-child(2) {
+        gap: 10px;
+    }
+}
+
+/*Themes*/
+
+/*Theme 1*/
+body.theme1 {
+    background-color: #3B4664;
+    color: white;
+}
+
+.theme1 #themeButton {
+    background-color: #191e2fda;
+}
+
+.theme1 #circle {
+    background-color: #FC6B58;
+}
+
+.theme1 #circleHover div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme1 #screen {
+    background-color: #181F32;
+}
+
+.theme1 #screenContent {
+    color: white !important;
+}
+
+.theme1 #topScreen {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.theme1 #buttonBox {
+    background-color: #252D44;
+    color: #454D5A;
+}
+
+.theme1 #buttonBox div:nth-child(1) div {
+    background-color: #EAE3D9;
+    box-shadow: 0px 3px #B3A396;
+}
+
+.theme1 #buttonBox div:nth-child(1) div.del,
+.theme1 #buttonBox div:nth-child(2) div.reset {
+    background-color: #64729A;
+    box-shadow: 0px 3px #404E75;
+    color: #f6f9ff;
+}
+
+.theme1 #buttonBox div:nth-child(1) div.del:hover,
+.theme1 #buttonBox div:nth-child(2) div.reset:hover {
+    background-color: #7f8cb1;
+}
+
+.theme1 #buttonBox div:nth-child(1) div.del:active,
+.theme1 #buttonBox div:nth-child(2) div.reset:active {
+    background-color: rgb(138, 156, 199);
+}
+
+.theme1 #buttonBox div:nth-child(1) div:hover,
+.theme1 #buttonBox div:nth-child(2) div:hover {
+    background-color: #eae3d9de;
+}
+
+.theme1 #buttonBox div:nth-child(1) div:active {
+    background-color: #eae3d9f1;
+}
+
+.theme1 #buttonBox div:nth-child(2) div.equal {
+    background-color: #D13F30;
+    color: #f6f9ff;
+    box-shadow: 0px 3px #902215;
+}
+
+.theme1 #buttonBox div:nth-child(2) div.equal:hover {
+    background-color: rgb(131, 30, 19);
+}
+
+.theme1 #buttonBox div:nth-child(2) div.equal:active {
+    background-color: rgb(150, 43, 31);
+}
+
+.theme1 #buttonBox div:nth-child(2) div {
+    background-color: #EAE3D9;
+    box-shadow: 0px 3px #B3A396;
+}
+
+/*Theme 2*/
+body.theme2 {
+    background-color: #E6E6E6;
+    color: #26261E;
+}
+
+.theme2 #themeButton {
+    background-color: #D3CDCD;
+}
+
+.theme2 #circle {
+    background-color: #C45404;
+}
+
+.theme2 #circleHover div:hover {
+    background-color: #c454042d;
+}
+
+.theme2 #screen {
+    background-color: #EEEEEE;
+}
+
+.theme2 #screenContent {
+    color: #26261E;
+}
+
+.theme2 #topScreen {
+    color: rgba(38, 38, 30, 0.5);
+}
+
+.theme2 #buttonBox {
+    background-color: #D3CDCD;
+    color: #57574F;
+}
+
+.theme2 #buttonBox div:nth-child(1) div {
+    background-color: #E5E4E0;
+    box-shadow: 0px 3px #A59E8F;
+}
+
+.theme2 #buttonBox div:nth-child(1) div.del,
+.theme2 #buttonBox div:nth-child(2) div.reset {
+    background-color: #388187;
+    box-shadow: 0px 3px #175961;
+    color: #f6f9ff;
+}
+
+.theme2 #buttonBox div:nth-child(1) div.del:hover,
+.theme2 #buttonBox div:nth-child(2) div.reset:hover {
+    background-color: #60B6BD;
+}
+
+.theme2 #buttonBox div:nth-child(1) div.del:active,
+.theme2 #buttonBox div:nth-child(2) div.reset:active {
+    background-color: #75c6ce;
+}
+
+.theme2 #buttonBox div:nth-child(1) div:hover,
+.theme2 #buttonBox div:nth-child(2) div:hover {
+    background-color: #c7c1b8de;
+}
+
+.theme2 #buttonBox div:nth-child(1) div:active {
+    background-color: #e0dad1de;
+}
+
+.theme2 #buttonBox div:nth-child(2) div.equal {
+    background-color: #C75500;
+    color: #f6f9ff;
+    box-shadow: 0px 3px #863800;
+}
+
+.theme2 #buttonBox div:nth-child(2) div.equal:hover {
+    background-color: #FF8B38;
+}
+
+.theme2 #buttonBox div:nth-child(2) div.equal:active {
+    background-color: #e07d36;
+}
+
+.theme2 .attribution {
+    color: #073035 !important;
+}
+
+/*Theme 2*/
+body.theme3 {
+    background-color: #17062A;
+    color: #E8D457;
+}
+
+.theme3 #themeButton {
+    background-color: #1E0836;
+}
+
+.theme3 #circle {
+    background-color: #01DFCE;
+}
+
+.theme3 #circleHover div:hover {
+    background-color: #c454042d;
+}
+
+.theme3 #screen {
+    background-color: #1E0836;
+}
+
+.theme3 #screenContent {
+    color: #E8D457 !important;
+}
+
+.theme3 #screenContent::placeholder {
+    color: #e8d55779 !important;
+}
+
+.theme3 #topScreen {
+    color: rgba(232, 212, 87, 0.5);
+}
+
+.theme3 #buttonBox {
+    background-color: #1E0836;
+    color: #57574F;
+}
+
+.theme3 #buttonBox div:nth-child(1) div {
+    background-color: #331B4D;
+    box-shadow: 0px 3px #8820A0;
+    color: #FFE833;
+}
+
+.theme3 #buttonBox div:nth-child(1) div.del,
+.theme3 #buttonBox div:nth-child(2) div.reset {
+    background-color: #55087C;
+    box-shadow: 0px 3px #B81CEB;
+    color: #f6f9ff;
+}
+
+.theme3 #buttonBox div:nth-child(1) div.del:hover,
+.theme3 #buttonBox div:nth-child(2) div.reset:hover {
+    background-color: #8433AE;
+}
+
+.theme3 #buttonBox div:nth-child(1) div.del:active,
+.theme3 #buttonBox div:nth-child(2) div.reset:active {
+    background-color: #933fbd;
+}
+
+.theme3 #buttonBox div:nth-child(1) div:hover,
+.theme3 #buttonBox div:nth-child(2) div:hover {
+    background-color: #6B34AC;
+}
+
+.theme3 #buttonBox div:nth-child(1) div:active {
+    background-color: #e0dad1de;
+}
+
+.theme3 #buttonBox div:nth-child(2) div.equal {
+    background-color: #00DECF;
+    color: #003837;
+    box-shadow: 0px 3px #6DFDF3;
+}
+
+.theme3 #buttonBox div:nth-child(2) div.equal:hover {
+    background-color: #94FFF9;
+}
+
+.theme3 #buttonBox div:nth-child(2) div.equal:active {
+    background-color: #b0fdf9;
+}
