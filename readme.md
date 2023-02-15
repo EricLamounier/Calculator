@@ -1,8 +1,8 @@
 # Calculadora Simples
 
 <div align="center" style="margin: 10px">
-    <img style="height: 240px; object-fit: cover; margin-right: 10px;" src="git/desktop.jpg" alt="desktop preview">
-    <img style="height: 240px" src="git/mobile.jpg" alt="mobile preview">
+    <img style="height: 240px; object-fit: cover; margin-right: 10px;" src="git/desktop1.jpg" alt="desktop preview">
+    <img style="height: 240px" src="git/mobile1.jpg" alt="mobile preview">
 </div>
 
 Projeto construído utilizando os conceitos básicos de HTML5, CSS3 com foco no flex-box.
